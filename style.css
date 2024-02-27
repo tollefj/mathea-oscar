@@ -31,6 +31,12 @@ p {
     }
 }
 
+h3 {
+    font-family: "Tangerine", cursive;
+    font-weight: 700;
+    font-style: normal;
+    font-size: x-large;
+}
 h2 {
     font-family: "Tangerine", cursive;
     font-weight: 700;

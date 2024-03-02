@@ -49,6 +49,8 @@ const SVG_XLINK = "http://www.w3.org/1999/xlink";
 
 let heartsRy = []
 
+let hearts = document.querySelector('#hearts');
+
 function useTheHeart(n) {
     let use = document.createElementNS(SVG_NS, 'use');
     use.n = n;
@@ -79,4 +81,7 @@ function Frame() {
     }
 }
 
-Frame()
+if (document.querySelector('#hearts')) {
+    Frame()
+}
+

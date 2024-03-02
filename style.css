@@ -31,20 +31,22 @@ p {
     }
 }
 
-h3 {
+h1, h2, h3 {
     font-family: "Tangerine", cursive;
     font-weight: 700;
     font-style: normal;
-    font-size: x-large;
+}
+h1 {
+  font-size: 10em;
 }
 h2 {
     font-family: "Tangerine", cursive;
-    font-weight: 700;
-    font-style: normal;
-    font-size: xx-large;
-    /* font-weight: 700; */
+    font-size: 3em;
     margin-top: .5em;
     animation: signature 3s ease-in-out;
+}
+h3 {
+  font-size: 3em;
 }
 
 /* Header */
@@ -86,80 +88,7 @@ main {
   padding: 20px;
 }
 
-h2 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
 p {
   line-height: 1.5;
 }
 
-/* Button */
-.add-to-calendar {
-  display: inline-block;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: #3498db; /* Blue button color */
-  color: #fff; /* White button text */
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out; /* Add button hover effect */
-}
-
-.add-to-calendar:hover {
-  background-color: #2980b9; /* Darker blue on hover */
-}
-
-p {
-  font-size: 0.8em;
-  color: #808080;
-}
-
-.calendar {
-  text-align: center;
-  max-width: 80%;
-  animation: fade-in 1s ease-in-out; /* Add animation reference */
-}
-
-.weekdays {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr); /* Seven equal columns for weekdays */
-  gap: 5px; /* Spacing between cells */
-  padding: 10px;
-}
-
-.weekdays div {
-  text-align: center;
-  color: #aaa;
-  font-weight: 100;
-}
-
-.date-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr); /* Seven equal columns for days */
-  gap: 5px; /* Spacing between cells */
-  padding: 10px;
-  /* border: 1px solid #ddd; */
-  border-radius: 5px;
-}
-
-#special-day {
-  color: #222;
-  font-weight: bold;
-}
-
-.date-grid time {
-  display: block;
-  text-align: center;
-  padding: 5px;
-  border-radius: 3px;
-  cursor: default; /* Remove default pointer cursor */
-  color: #777;
-}
-
-.date-grid time:nth-child(7n - 1),
-.date-grid time:nth-child(7n) {
-  color: #999;
-}

@@ -7,12 +7,13 @@ body {
   background-repeat: no-repeat; /* Prevent background from repeating */
   background-attachment: fixed; /* Fix background position */
   font-family: "Tangerine", cursive;
+  margin-top: 20px;
 }
 svg {
   width: 100vw;
   height: 100vh;
   margin-left: -.5em;
-  margin-top: -3.1em;
+  margin-top: -1.2em;
   padding: 0;
 }
 
@@ -55,12 +56,6 @@ h3 {
   font-size: 1.8em;
 }
 
-/* Header */
-header {
-  text-align: center;
-  margin-top: 50px;
-}
-
 main {
   display: flex;
   flex-direction: column;
@@ -71,35 +66,11 @@ main {
   transition: visibility 0s, opacity 5s linear;
 }
 
-/* Hero section */
-.hero {
-  text-align: center;
-}
-
 .hero-image {
   width: 70%;
-  max-width: 600px;
-  animation: fade-in 1s ease-in-out; /* Add animation reference */
+  max-width: 400px;
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Information section */
 .information {
   padding: 20px;
 }
-.cal {
-  animation: fade-in 4s ease-in-out;
-}
-
-p {
-  line-height: 1.5;
-}
-

@@ -50,16 +50,22 @@
         </div>
         <div class="date-grid">
     </section> -->
-    <h2>Mathea og Oscar</h2>
+    <div id="footer">
+        <h2>Mathea og Oscar</h2>
+        <p><em>mer informasjon kommer</em></p>
+    </div>
 </main>
+</body>
 <script>
-    document.querySelector('main').style.display = 'none';
+    // document.querySelector('main').style.display = 'none';
+    document.querySelector('main').style.visibility = 'hidden';
     setTimeout(function() {
         var hearts = document.querySelector('#hearts');
         hearts.parentNode.removeChild(hearts);
-        document.querySelector('main').style.display = 'block';
+        // document.querySelector('main').style.display = 'block';
+        document.querySelector('main').style.visibility = 'visible';
+        document.querySelector('main').style.opacity = 1;
     }, 2000);
 </script>
 <script src="script.js"></script>
-</body>
 </html>

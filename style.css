@@ -1,16 +1,12 @@
 /* General styles */
 body {
-  font-family: Arial, sans-serif;
-  /* font-style: normal; */
   text-align: center;
   overflow: hidden;
   background: linear-gradient(to top, #f3d3b4, #d2b08e);
   background-size: cover; /* Adjust background size */
   background-repeat: no-repeat; /* Prevent background from repeating */
   background-attachment: fixed; /* Fix background position */
-}
-main {
-  position: relative;
+  font-family: "Tangerine", cursive;
 }
 svg {
   width: 100vw;
@@ -40,7 +36,6 @@ p {
 }
 
 h1, h2, h3 {
-    font-family: "Tangerine", cursive;
     font-weight: 700;
     font-style: normal;
 }
@@ -48,12 +43,16 @@ h1 {
   font-size: 10em;
 }
 h2 {
-    font-family: "Tangerine", cursive;
-    font-size: 2.5em;
-    animation: signature 3s ease-in-out;
+    font-size: 2.8em;
 }
 h3 {
   font-size: 3em;
+}
+#footer {
+  animation: signature 6s ease-in-out;
+}
+#footer p{
+  font-size: 1.8em;
 }
 
 /* Header */
@@ -67,6 +66,9 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 5s linear;
 }
 
 /* Hero section */
@@ -92,6 +94,9 @@ main {
 /* Information section */
 .information {
   padding: 20px;
+}
+.cal {
+  animation: fade-in 4s ease-in-out;
 }
 
 p {

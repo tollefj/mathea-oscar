@@ -20,7 +20,6 @@ svg {
   padding: 0;
 }
 
-
 h1,
 h2,
 p {
@@ -51,7 +50,6 @@ h1 {
 h2 {
     font-family: "Tangerine", cursive;
     font-size: 2.5em;
-    margin-top: .5em;
     animation: signature 3s ease-in-out;
 }
 h3 {

@@ -208,3 +208,10 @@ document.getElementById('btn-zoomout').addEventListener('click', function () {
         zoomlevel
     )
 });
+
+window.addEventListener('scroll', function () {
+    const scroll = window.scrollY;
+    const opacity = 1 - (scroll / 500);
+    const finalOpacity = opacity > 0 ? opacity : 0.3;
+    document.documentElement.style.setProperty('--scroll-opacity', finalOpacity);
+});

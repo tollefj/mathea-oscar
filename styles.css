@@ -1,4 +1,7 @@
-/* save a color palette as vars: */
+html {
+    --scroll-opacity: 0.4;
+}
+
 :root {
     --pink: rgb(231, 204, 204);
     --strongpink: rgb(191, 134, 134);
@@ -12,17 +15,54 @@
 
 body {
     font-family: 'Playfair Display', serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--stronggreen);
     background-color: var(--offwhite);
+    /* background from image instead: */
+    /* background-image: url('assets/bg-eucal.png'); */
     padding: 0;
     margin: 0;
+}
+
+
+/* body::before {
+    content: '';
+    position: fixed;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 700px;
+    background-image: url('assets/bg-eucal-top.png');
+    background-size: cover;
+    z-index: -100;
+    opacity: 0.4;
+} */
+
+body::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 700px;
+    background-image: url('assets/bg-eucal.png');
+    background-size: cover;
+    z-index: -100;
+    transition: opacity 0.3s ease;
+    opacity: calc(0.4 - var(--scroll-opacity, 0) * 0.4);
+}
+
+@media (max-width: 768px) {
+    body::after {
+        height: 500px;
+    }
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    padding-bottom: 300px;
 }
 
 h1 {

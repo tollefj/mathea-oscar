@@ -80,6 +80,13 @@ h4 {
     margin-bottom: 0;
 }
 
+/* add separators above h3 */
+h3 {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--greentext);
+}
+
 a {
     color: var(--stronggreen);
     text-decoration: none;
@@ -110,7 +117,11 @@ a:hover::after {
 
 .btn-container {
     display: flex;
+    margin-top: 5px;
+    /* flex-direction: column; */
     justify-content: center;
+    align-items: center;
+    /* text-align: center; */
     gap: 10px;
 }
 
@@ -229,10 +240,10 @@ section {
 .people-container {
     /* flex with wrappable people icons, column */
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
     /* gaps */
-    gap: 30px;
+    gap: 10px;
 }
 
 #map {

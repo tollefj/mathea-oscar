@@ -77,6 +77,7 @@ h2,
 h3,
 h4 {
     text-align: center;
+    margin-bottom: 0;
 }
 
 a {
@@ -163,10 +164,51 @@ section {
     width: 150px;
     height: 150px;
     display: inline-block;
-    background-image: url('assets/dummy.jpg');
     background-size: cover;
     background-position: center;
-    border: 2px solid #000;
+    border: 5px solid var(--greentext);
+    opacity: 0.7;
+    animation: float 5s ease-in-out infinite;
+    position: relative;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) translateX(0px);
+    }
+
+    20% {
+        transform: translateY(-10px) translateX(5px);
+    }
+
+    40% {
+        transform: translateY(-5px) translateX(-8px);
+    }
+
+    60% {
+        transform: translateY(8px) translateX(3px);
+    }
+
+    80% {
+        transform: translateY(4px) translateX(-5px);
+    }
+
+    100% {
+        transform: translateY(0px) translateX(0px);
+    }
+}
+
+/* Add some variety by staggering animations */
+.dynamic-border:nth-child(even) {
+    animation-delay: 2s;
+}
+
+.oscar {
+    background-image: url("assets/photo_oscar.jpeg");
+}
+
+.mathea {
+    background-image: url("assets/photo_mat.jpeg");
 }
 
 .location-section {

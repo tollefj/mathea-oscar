@@ -74,6 +74,7 @@ const polylineToyenToHelsfyr = [
 ]
 
 const zoomlevel = 13;
+const flyZoom = 16;
 const lineWidth = 6;
 
 
@@ -93,8 +94,8 @@ const tileFormats = {
 
 const tileFormat = tileFormats["light"]
 L.tileLayer(tileFormat, {
-    minZoom: 11,
-    maxZoom: 18,
+    minZoom: zoomlevel - 2,
+    maxZoom: flyZoom,
     ext: 'png'
 }).addTo(map);
 
@@ -191,7 +192,6 @@ map.on('zoomend', function () {
 });
 
 
-const flyZoom = 17;
 document.getElementById('btn-wedding').addEventListener('click', function () {
     map.flyTo(
         [locations["vielse"].lat, locations["vielse"].lng],

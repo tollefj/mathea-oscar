@@ -1,5 +1,5 @@
 html {
-    --scroll-opacity: 0.4;
+    --scroll-opacity: 0.0;
 }
 
 :root {
@@ -71,7 +71,6 @@ h1 {
     margin-top: -5px;
 }
 
-h1,
 h2,
 h3,
 h4 {

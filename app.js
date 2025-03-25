@@ -130,7 +130,6 @@ window.addEventListener('scroll', function () {
     document.documentElement.style.setProperty('--scroll-opacity', opacity);
 });
 
-// lightsaber effect
 document.querySelector('.oscar').addEventListener('click', function () {
     var root = document.querySelector(':root');
     root.classList.add('enable-star-wars');
@@ -147,5 +146,5 @@ document.querySelector('.oscar').addEventListener('click', function () {
     }
     setTimeout(function () {
         root.classList.remove('enable-star-wars');
-    }, 4000);
+    }, 4500);
 });

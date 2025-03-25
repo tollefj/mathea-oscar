@@ -235,7 +235,7 @@ document.querySelector('.oscar').addEventListener('click', function () {
     setTimeout(function () {
         var audio = new Audio('assets/lightsaber.mp3');
         audio.play();
-    }, 500);
+    }, 300);
     setTimeout(function () {
         root.classList.remove('enable-star-wars');
     }, 4000);

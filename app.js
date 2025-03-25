@@ -1,6 +1,7 @@
 const map = L.map('map').setView([midpoints.lat, midpoints.lng], zoomlevel);
 
 const tileFormat = tileFormats["light"]
+// const tileFormat = tileFormats["normal"]
 L.tileLayer(tileFormat, {
     minZoom: zoomlevel - 2,
     maxZoom: flyZoom,
@@ -123,9 +124,10 @@ document.getElementById('btn-zoomout').addEventListener('click', function () {
 
 window.addEventListener('scroll', function () {
     const scroll = window.scrollY;
-    const opacity = 1 - (scroll / 500);
-    const finalOpacity = opacity > 0 ? opacity : 0.0;
-    document.documentElement.style.setProperty('--scroll-opacity', finalOpacity);
+    const maxY = 4000;
+    var opacity = scroll / maxY
+    opacity = Math.min(0.4, Math.max(0, opacity));
+    document.documentElement.style.setProperty('--scroll-opacity', opacity);
 });
 
 // lightsaber effect

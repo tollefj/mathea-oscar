@@ -1,5 +1,5 @@
 html {
-    --scroll-opacity: 0.0;
+    --scroll-opacity: 0.4;
 }
 
 :root {
@@ -18,12 +18,9 @@ body {
     font-size: 1.1rem;
     color: var(--stronggreen);
     background-color: var(--offwhite);
-    /* background from image instead: */
-    /* background-image: url('assets/bg-eucal.png'); */
     padding: 0;
     margin: 0;
-    /* animate opacity and background-color changes */
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 500;
 }
 
 
@@ -51,7 +48,7 @@ body::after {
     background-size: cover;
     z-index: -100;
     transition: opacity 0.3s ease;
-    opacity: calc(0.4 - var(--scroll-opacity, 0) * 0.4);
+    opacity: var(--scroll-opacity);
 }
 
 @media (max-width: 768px) {
@@ -134,7 +131,7 @@ section {
 .btn {
     display: inline-block;
     padding: 6px;
-    background-color: transparent;
+    background-color: var(--offwhite);
     color: var(--stronggreen);
     border: 1px solid var(--stronggreen);
     border-radius: 5px;
@@ -288,17 +285,25 @@ iframe {
 /* Custom Leaflet map styles */
 .leaflet-container {
     border: none;
-    /* Remove default map borders */
     border-radius: 15px;
-    /* Add rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* Optional shadow for a polished look */
+    /* box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2); */
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
 }
 
+/* Hide the bottom footer of Leaflet */
 .leaflet-control-attribution {
     display: none !important;
-    /* Hide the bottom footer of Leaflet */
 }
+
+/* Remove zoom buttons */
+.leaflet-control-zoom {
+    display: none;
+}
+
+/* .leaflet-tile-pane {
+    filter: hue-rotate(360deg);
+} */
+
 
 /* easter egg */
 

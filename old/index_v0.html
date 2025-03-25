@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Wedding Day</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .pastel-eucalyptus { background-color: #CDE4C5; }
+        .pastel-pink { background-color: #FBC8D9; }
+        .rounded-organic { border-radius: 50%; }
+    </style>
+    <script>
+        // Organic shape generator on image load
+        document.addEventListener('DOMContentLoaded', function() {
+            const shapes = ['rounded-full', 'rounded-lg', 'rounded-2xl', 'rounded-md'];
+            document.querySelectorAll('.dynamic-shape').forEach(img => {
+                const randomShape = shapes[Math.floor(Math.random() * shapes.length)];
+                img.classList.add(randomShape);
+            });
+        });
+    </script>
+</head>
+<body class="pastel-eucalyptus min-h-screen text-gray-700 p-6">
+    <header class="text-center">
+        <h1 class="text-4xl font-bold text-pink-600 mb-2">Our Wedding Day</h1>
+        <p class="text-lg">Celebrate our special day with us!</p>
+    </header>
+
+    <section class="mt-6">
+        <h2 class="text-2xl font-semibold text-center mb-4">When and Where</h2>
+        <div class="flex justify-center gap-4 p-4">
+            <button id="btnA" class="bg-pink-200 p-2 rounded-lg" onclick="showLocation('A')">Location A</button>
+            <button id="btnB" class="bg-eucalyptus-200 p-2 rounded-lg" onclick="showLocation('B')">Location B</button>
+        </div>
+        <div id="locationInfo" class="flex justify-center items-center mt-4">
+            <div id="locationA" class="p-4 text-center">
+                <h3 class="text-xl font-semibold">Location A</h3>
+                <p>123 Wedding Lane, Cityville</p>
+                <iframe src="https://www.google.com/maps/embed?..." class="w-full h-64 rounded-lg border border-gray-300"></iframe>
+                <p>Parking is available in the lot next to the venue.</p>
+            </div>
+            <div id="locationB" class="hidden p-4 text-center">
+                <h3 class="text-xl font-semibold">Location B</h3>
+                <p>456 Celebration Avenue, Townsville</p>
+                <iframe src="https://www.google.com/maps/embed?..." class="w-full h-64 rounded-lg border border-gray-300"></iframe>
+                <p>Additional parking behind the main building.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-6">
+        <h2 class="text-2xl font-semibold text-center mb-4">Groomsmen</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-4 border rounded-lg">
+                <div class="flex items-center gap-4">
+                    <img src="images/john.jpg" alt="John Doe" class="w-24 h-24 object-cover border border-gray-300 dynamic-shape">
+                    <div>
+                        <h3 class="text-lg font-bold">John Doe</h3>
+                        <p>Best Man</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-4 border rounded-lg">
+                <div class="flex items-center gap-4">
+                    <img src="images/alex.jpg" alt="Alex Smith" class="w-24 h-24 object-cover border border-gray-300 dynamic-shape">
+                    <div>
+                        <h3 class="text-lg font-bold">Alex Smith</h3>
+                        <p>Groomsman</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center mt-6">
+        <p class="text-sm text-gray-500">Designed with love and pastel vibes ❤️</p>
+    </footer>
+
+    <script>
+        function showLocation(location) {
+            document.getElementById('locationA').classList.add('hidden');
+            document.getElementById('locationB').classList.add('hidden');
+            if (location === 'A') {
+                document.getElementById('locationA').classList.remove('hidden');
+            } else {
+                document.getElementById('locationB').classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>

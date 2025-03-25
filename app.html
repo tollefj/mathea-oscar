@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Wedding Day</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Velkommen til Bryllupet!</h1>
+      </header>
+
+      <section class="location-section">
+        <h3>Adkomst</h3>
+        <p>
+          <span><b>Vielse</b></span> i botanisk hage. Det er gateparkering i
+          Sofienbergsgata med enkel adgang til hagen fra begge kanter. Trykk på
+          knappene for å se de på kartet:
+        </p>
+        <div class="btn-container">
+          <button class="btn" id="btn-wedding">Vielse</button>
+          <button class="btn" id="btn-parking">Parkering</button>
+          <button class="btn" id="btn-dinner">Middag</button>
+          <button class="btn" id="btn-zoomout">Zoom ut</button>
+        </div>
+        <br />
+
+        <div id="map-container">
+          <div id="map"></div>
+          <p style="text-align: center; font-size: 0.7em">
+            Trykk på ikonene og rutene for detaljer
+          </p>
+        </div>
+        <p>
+          Når vielsen er ferdig skal vi videre til Trewerket som ligger på
+          Helsfyr, det tar 9 min med bil. Er du litt sprek kan du gå til Tøyen
+          stasjon (10 min), ta T-banen 2 stopp, og deretter gå 10 min.
+        </p>
+      </section>
+
+      <section>
+        <h3>Forlovere</h3>
+        <div class="people-container">
+          <div>
+            <div class="dynamic-border"></div>
+            <p>Navn Navnesen</p>
+          </div>
+          <div>
+            <div class="dynamic-border"></div>
+            <p>Navn Navnesen</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Overnatting på Hotell</h3>
+        <p>
+          Det er et hotell like ved lokalet, dersom du ønsker å feste hele
+          natten og ikke tenke på hjemreisen!
+        </p>
+      </section>
+
+      <footer>
+        <div class="address-container">
+          <h3>Adresser og lenker til Google Maps</h3>
+          <div class="btn-container">
+            <a href="https://maps.app.goo.gl/h1u6WFe5FC7HbrKH8" target="_blank"
+              >Vielse i Botanisk Hage</a
+            >
+            <a href="https://maps.app.goo.gl/9fKmUjCW6qk6xpHJA" target="_blank"
+              >Middag på Trewerket</a
+            >
+          </div>
+        </div>
+        <p style="text-align: center">Vi gleder oss!<br />- Mathea og Oscar</p>
+      </footer>
+    </div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>

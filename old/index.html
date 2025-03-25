@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Wedding Day</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Our Wedding Day</h1>
+    </header>
+
+    <section class="location-section">
+        <h2>When and Where</h2>
+        <div class="location-toggle">
+            <button id="btnA">Location A</button>
+            <button id="btnB">Location B</button>
+        </div>
+        <div id="locationA">
+            <h3>Location A</h3>
+            <p>123 Wedding Lane, Cityville</p>
+            <iframe src="https://www.google.com/maps/embed?..." loading="lazy"></iframe>
+            <p>Parking is available in the lot next to the venue.</p>
+        </div>
+        <div id="locationB" class="hidden">
+            <h3>Location B</h3>
+            <p>456 Celebration Avenue, Townsville</p>
+            <iframe src="https://www.google.com/maps/embed?..." loading="lazy"></iframe>
+            <p>Additional parking is behind the main building.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Groomsmen</h2>
+        <div>
+            <div class="dynamic-border"></div>
+            <p>John Doe - Best Man</p>
+        </div>
+        <div>
+            <div class="dynamic-border"></div>
+            <p>Alex Smith - Groomsman</p>
+        </div>
+    </section>
+
+    <footer>
+        <p style="text-align: center;">Designed with love ❤️</p>
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>

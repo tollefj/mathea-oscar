@@ -1,0 +1,177 @@
+/* save a color palette as vars: */
+:root {
+    --pink: rgb(231, 204, 204);
+    --strongpink: rgb(191, 134, 134);
+    --offwhite: rgb(237, 232, 220);
+    --green: rgb(165, 182, 141);
+    --stronggreen: rgb(63, 70, 50);
+    --fadedgreen: rgb(193, 207, 161);
+    --greentext: rgb(74, 83, 60);
+    --greener: rgb(122, 117, 98);
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--stronggreen);
+    background-color: var(--offwhite);
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    text-align: center;
+}
+
+a {
+    color: var(--stronggreen);
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+    border-bottom: 1px solid var(--stronggreen);
+}
+
+a:hover {
+    color: var(--green);
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--stronggreen);
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: transparent;
+    color: var(--stronggreen);
+    border: 1px solid var(--stronggreen);
+    border-radius: 4px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+    color: var(--offwhite);
+    background-color: var(--stronggreen);
+}
+
+/* Button variants */
+.btn-primary {
+    background-color: var(--stronggreen);
+    color: var(--offwhite);
+}
+
+.btn-primary:hover {
+    background-color: var(--green);
+}
+
+.btn-primary::after {
+    background-color: var(--offwhite);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--stronggreen);
+}
+
+/* ...existing code... */
+
+
+.dynamic-border {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    background-image: url('assets/dummy.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #000;
+}
+
+.location-section {
+    margin-top: 30px;
+}
+
+.location-toggle {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.people-container {
+    /* flex with wrappable people icons, column */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* gaps */
+    gap: 30px;
+}
+
+#map {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 10px;
+}
+
+iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+}
+
+/* Custom Leaflet map styles */
+.leaflet-container {
+    border: none;
+    /* Remove default map borders */
+    border-radius: 15px;
+    /* Add rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Optional shadow for a polished look */
+}
+
+.leaflet-control-attribution {
+    display: none !important;
+    /* Hide the bottom footer of Leaflet */
+}

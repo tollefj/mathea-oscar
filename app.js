@@ -73,7 +73,7 @@ const polylineToyenToHelsfyr = [
     [59.912783330420346, 10.801415122480705],
 ]
 
-const zoomlevel = 14;
+const zoomlevel = 13;
 const lineWidth = 6;
 
 
@@ -86,7 +86,7 @@ const fadedGreen = 'rgba(0, 128, 0, 0.5)';
 
 const map = L.map('map').setView([midpoints.lat, midpoints.lng], zoomlevel);
 const tileFormat = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
-L.tileLayer(tileFormat, { maxZoom: 18, minZoom: 14 }).addTo(map);
+L.tileLayer(tileFormat, { maxZoom: 18, minZoom: 11 }).addTo(map);
 
 // walking
 const polylineWalking = L.polyline(directions, { color: fadedOrange2, weight: lineWidth }).addTo(map);

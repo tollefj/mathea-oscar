@@ -85,16 +85,14 @@ const fadedGreen = 'rgba(0, 128, 0, 0.5)';
 
 
 const map = L.map('map').setView([midpoints.lat, midpoints.lng], zoomlevel);
-const tileFormat = 'https://tile.openstreetmap.org/{z}/{x}/{y}.{ext}';
-// L.tileLayer(tileFormat, { maxZoom: 18, minZoom: 11 }).addTo(map);
-
 const tileFormats = {
-    "normal": tileFormat,
-    "osmbright": 'https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.{ext}',
-    "outdoors": "https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.{ext}",
+    "normal": 'https://tile.openstreetmap.org/{z}/{x}/{y}.{ext}',
+    "light": "http://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+    "dark": "http://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",
 }
 
-L.tileLayer(tileFormats["normal"], {
+const tileFormat = tileFormats["light"]
+L.tileLayer(tileFormat, {
     minZoom: 11,
     maxZoom: 18,
     ext: 'png'
@@ -227,4 +225,18 @@ window.addEventListener('scroll', function () {
     const opacity = 1 - (scroll / 500);
     const finalOpacity = opacity > 0 ? opacity : 0.0;
     document.documentElement.style.setProperty('--scroll-opacity', finalOpacity);
+});
+
+// on the "oscar" class, enable a click event that also adds the "enable-star-wars" class
+document.querySelector('.oscar').addEventListener('click', function () {
+    // add enable-star-wars on the root of the page, not on this element:
+    var root = document.querySelector(':root');
+    root.classList.add('enable-star-wars');
+    setTimeout(function () {
+        var audio = new Audio('assets/lightsaber.mp3');
+        audio.play();
+    }, 500);
+    setTimeout(function () {
+        root.classList.remove('enable-star-wars');
+    }, 4000);
 });

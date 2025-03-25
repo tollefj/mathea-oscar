@@ -1,5 +1,5 @@
 html {
-    --scroll-opacity: 0.4;
+    --scroll-opacity: 0.0;
 }
 
 :root {
@@ -22,6 +22,8 @@ body {
     /* background-image: url('assets/bg-eucal.png'); */
     padding: 0;
     margin: 0;
+    /* animate opacity and background-color changes */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 
@@ -77,7 +79,7 @@ h2,
 h3,
 h4 {
     text-align: center;
-    margin-bottom: 0;
+    margin-bottom: 10px;
 }
 
 /* add separators above h3 */
@@ -177,10 +179,13 @@ section {
     display: inline-block;
     background-size: cover;
     background-position: center;
-    border: 5px solid var(--greentext);
-    opacity: 0.7;
-    animation: float 5s ease-in-out infinite;
+    border: 5px solid var(--greener);
+    opacity: 0.8;
     position: relative;
+}
+
+.animated {
+    animation: float 5s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -211,15 +216,39 @@ section {
 
 /* Add some variety by staggering animations */
 .dynamic-border:nth-child(even) {
-    animation-delay: 2s;
+    animation-delay: 1s;
 }
 
 .oscar {
-    background-image: url("assets/photo_oscar.jpeg");
+    background-image: url("assets/photo_osc2.png");
 }
 
 .mathea {
-    background-image: url("assets/photo_mat.jpeg");
+    background-image: url("assets/photo_mat2.png");
+}
+
+.toast {
+    background-image: url("assets/larserik.png");
+    width: 120px;
+    height: 120px;
+}
+
+.ingrid {
+    width: 75px;
+    height: 75px;
+    background-image: url("assets/ingrid.png");
+}
+
+.anders {
+    width: 75px;
+    height: 75px;
+    background-image: url("assets/anders.png");
+}
+
+.marius {
+    width: 75px;
+    height: 75px;
+    background-image: url("assets/dummy.jpg");
 }
 
 .location-section {
@@ -238,11 +267,9 @@ section {
 }
 
 .people-container {
-    /* flex with wrappable people icons, column */
     display: flex;
     /* flex-wrap: wrap; */
-    /* justify-content: center; */
-    /* gaps */
+    justify-content: center;
     gap: 10px;
 }
 
@@ -271,4 +298,82 @@ iframe {
 .leaflet-control-attribution {
     display: none !important;
     /* Hide the bottom footer of Leaflet */
+}
+
+/* easter egg */
+
+.enable-star-wars {
+    position: relative;
+    overflow: hidden;
+}
+
+.enable-star-wars::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 1000;
+    animation: darken-page .5s ease;
+}
+
+.enable-star-wars::after {
+    content: '';
+    position: fixed;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    width: 6px;
+    height: 0;
+    background-color: red;
+    box-shadow: 0 0 10px 3px red;
+    border-radius: 3px;
+    z-index: 1001;
+    transform-origin: center bottom;
+    animation: lightsaber-appear 1s ease forwards 0.6s,
+        lightsaber-swing 1.2s ease-in-out 0.9s forwards;
+}
+
+@keyframes darken-page {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes lightsaber-appear {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 250px;
+    }
+}
+
+@keyframes lightsaber-swing {
+    0% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+
+    25% {
+        transform: translateX(-50%) rotate(30deg);
+    }
+
+    50% {
+        transform: translateX(-50%) rotate(-20deg);
+    }
+
+    75% {
+        transform: translateX(-50%) rotate(10deg);
+    }
+
+    100% {
+        transform: translateX(-50%) rotate(0deg);
+    }
 }

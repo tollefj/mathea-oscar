@@ -19,13 +19,17 @@
   <body>
     <div class="container">
       <header>
-        <h1>Velkommen til bryllupet!</h1>
+        <h1 style="margin-bottom: 0">Velkommen til bryllupet!</h1>
+        <p style="text-align: center; margin-top: -10px">
+          <i>Lørdag, 21. juni</i>
+        </p>
       </header>
-
       <section class="location-section">
         <p>
-          <span><b>Vielse</b></span> i botanisk hage. Det er gateparkering i
-          Sofienbergsgata med enkel adgang til hagen fra begge kanter.
+            <b>Vielse</b>. Humanetisk vielse i botanisk hage,
+            <b>kl 14:30</b> (oppmøte 15 min før).
+            <br>
+        <b>Middag</b> kl 16:00 på Trewerket.
         </p>
         <p>Trykk på knappene under for å se lokasjon:</p>
         <div id="map-container">
@@ -41,9 +45,16 @@
           <button class="btn" id="btn-zoomout">Zoom ut</button>
         </div>
         <p>
+          Det er gateparkering i Sofienbergsgata med enkel adgang til hagen fra
+          begge kanter.
+        </p>
+        <p>
           Når vielsen er ferdig skal vi videre til Trewerket som ligger på
           Helsfyr, det tar 9 min med bil. Er du litt sprek kan du gå til Tøyen
           stasjon (10 min), ta T-banen 2 stopp, og deretter gå 10 min.
+        </p>
+        <p style="font-size: 0.8em;">
+          PS: Siden det er utendørs kan planene endres hvis været er dårlig. Hold dere oppdatert på denne siden!
         </p>
       </section>
 
@@ -54,21 +65,22 @@
           å si noen ord på dagen vår kan du <b>gi han beskjed innen 1.juni</b>.
           Kontakt på <a href="mailto:larsled93@gmail.com">epost</a> eller
           telefon: 91881886.
+          <div class="dynamic-border toast"></div>
         </p>
       </section>
       <section>
         <h3>Forlovere</h3>
         <div class="people-container">
           <div>
-            <!-- <div class="dynamic-border"></div> -->
-            <!-- <p>Navn Navnesen</p> -->
+            <div class="dynamic-border ingrid"></div>
             <p>Ingrid Flesche Låtun</p>
           </div>
           <div>
-            <!-- <div class="dynamic-border"></div> -->
+            <div class="dynamic-border anders"></div>
             <p>Anders Fehn</p>
           </div>
           <div>
+            <div class="dynamic-border marius"></div>
             <p>Marius Moum</p>
           </div>
         </div>
@@ -111,8 +123,8 @@
         </div>
         <p style="text-align: center">Vi gleder oss!<br />- Mathea og Oscar</p>
         <div class="people-container">
-          <div class="dynamic-border oscar"></div>
-          <div class="dynamic-border mathea"></div>
+          <div class="dynamic-border mathea animated"></div>
+          <div class="dynamic-border oscar animated"></div>
         </div>
       </footer>
     </div>

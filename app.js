@@ -236,6 +236,13 @@ document.querySelector('.oscar').addEventListener('click', function () {
         var audio = new Audio('assets/lightsaber.mp3');
         audio.play();
     }, 300);
+    for (let i = 0; i < 3; i++) {
+        const timer = i == 0 ? 1500 : 1500 + i * 400;
+        setTimeout(function () {
+            var audio = new Audio('assets/swing.mp3');
+            audio.play();
+        }, timer)
+    }
     setTimeout(function () {
         root.classList.remove('enable-star-wars');
     }, 4000);

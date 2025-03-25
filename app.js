@@ -85,8 +85,21 @@ const fadedGreen = 'rgba(0, 128, 0, 0.5)';
 
 
 const map = L.map('map').setView([midpoints.lat, midpoints.lng], zoomlevel);
-const tileFormat = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
-L.tileLayer(tileFormat, { maxZoom: 18, minZoom: 11 }).addTo(map);
+const tileFormat = 'https://tile.openstreetmap.org/{z}/{x}/{y}.{ext}';
+// L.tileLayer(tileFormat, { maxZoom: 18, minZoom: 11 }).addTo(map);
+
+const tileFormats = {
+    "normal": tileFormat,
+    "osmbright": 'https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.{ext}',
+    "outdoors": "https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.{ext}",
+}
+
+L.tileLayer(tileFormats["normal"], {
+    minZoom: 11,
+    maxZoom: 18,
+    ext: 'png'
+}).addTo(map);
+
 
 // walking
 const polylineWalking = L.polyline(directions, { color: fadedOrange2, weight: lineWidth }).addTo(map);
@@ -212,6 +225,6 @@ document.getElementById('btn-zoomout').addEventListener('click', function () {
 window.addEventListener('scroll', function () {
     const scroll = window.scrollY;
     const opacity = 1 - (scroll / 500);
-    const finalOpacity = opacity > 0 ? opacity : 0.3;
+    const finalOpacity = opacity > 0 ? opacity : 0.0;
     document.documentElement.style.setProperty('--scroll-opacity', finalOpacity);
 });

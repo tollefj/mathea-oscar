@@ -1,5 +1,5 @@
 html {
-    --scroll-opacity: 0.0;
+    --scroll-opacity: 0.15;
 }
 
 :root {
@@ -244,7 +244,7 @@ section {
 .marius {
     width: 75px;
     height: 75px;
-    background-image: url("assets/dummy.jpg");
+    background-image: url("assets/marius.png");
 }
 
 .location-section {

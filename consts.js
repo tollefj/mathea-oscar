@@ -73,6 +73,7 @@ const polylineToyenToHelsfyr = [
 
 const zoomlevel = 13;
 const flyZoom = 16;
+const flyDelay = 750;
 const lineWidth = 6;
 
 

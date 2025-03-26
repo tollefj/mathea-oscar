@@ -49,33 +49,47 @@ const markerMiddagIcon = L.icon({
     iconUrl: locations["middag"].icon,
     iconSize: [50, 50],
 })
-L.marker([locations["middag"].lat, locations["middag"].lng], { icon: markerMiddagIcon })
-    .addTo(map)
-    .bindPopup(locations["middag"].text);
-
 const markerParkingIcon = L.icon({
     iconUrl: "assets/map_parking.png",
     iconSize: [30, 30],
 })
-L.marker([59.92130, 10.76971], { icon: markerParkingIcon })
-    .addTo(map)
-    .bindPopup("Parkering langs Sofienberggata");
-
 const markerWeddingIcon = L.icon({
     iconUrl: locations["vielse"].icon,
     iconSize: [50, 50],
 })
-L.marker([locations["vielse"].lat, locations["vielse"].lng], { icon: markerWeddingIcon })
-    .addTo(map)
-    .bindPopup(locations["vielse"].text);
-
-const markerTram = L.icon({
+const markerTramIcon = L.icon({
     iconUrl: "assets/map_tbane.png",
     iconSize: [30, 30],
 })
-L.marker([59.9143, 10.78772], { icon: markerTram })
+
+const markerWedding = L.marker([locations["vielse"].lat, locations["vielse"].lng], { icon: markerWeddingIcon })
+    .addTo(map)
+    .bindPopup(locations["vielse"].text);
+
+const markerTram = L.marker([59.9143, 10.78772], { icon: markerTramIcon })
     .addTo(map)
     .bindPopup("T-bane 1, 2, 4 og 5");
+
+const markerMiddag = L.marker([locations["middag"].lat, locations["middag"].lng], { icon: markerMiddagIcon })
+    .addTo(map)
+    .bindPopup(locations["middag"].text);
+
+const markerParking = L.marker([59.92130, 10.76971], { icon: markerParkingIcon })
+    .addTo(map)
+    .bindPopup("Parkering langs Sofienberggata");
+
+const markers = [
+    markerMiddag,
+    markerParking,
+    markerWedding,
+    markerTram
+];
+
+function closeMarkers() {
+    markers.forEach(marker => {
+        marker.closePopup();
+    });
+}
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -99,6 +113,9 @@ document.getElementById('btn-wedding').addEventListener('click', function () {
         [locations["vielse"].lat, locations["vielse"].lng],
         flyZoom
     )
+    setTimeout(function () {
+        markerWedding.openPopup();
+    }, flyDelay);
 });
 
 document.getElementById('btn-dinner').addEventListener('click', function () {
@@ -106,6 +123,9 @@ document.getElementById('btn-dinner').addEventListener('click', function () {
         [locations["middag"].lat, locations["middag"].lng],
         flyZoom
     )
+    setTimeout(function () {
+        markerMiddag.openPopup();
+    }, flyDelay);
 });
 
 document.getElementById('btn-parking').addEventListener('click', function () {
@@ -113,6 +133,9 @@ document.getElementById('btn-parking').addEventListener('click', function () {
         [59.92130, 10.76971],
         flyZoom
     )
+    setTimeout(function () {
+        markerParking.openPopup();
+    }, flyDelay);
 });
 
 document.getElementById('btn-zoomout').addEventListener('click', function () {
@@ -120,13 +143,17 @@ document.getElementById('btn-zoomout').addEventListener('click', function () {
         [midpoints.lat, midpoints.lng],
         zoomlevel
     )
+    setTimeout(function () {
+        closeMarkers();
+    }, flyDelay);
 });
 
 window.addEventListener('scroll', function () {
     const scroll = window.scrollY;
     const maxY = 4000;
+    const minOpacity = 0.4;
     var opacity = scroll / maxY
-    opacity = Math.min(0.4, Math.max(0, opacity));
+    opacity = Math.min(minOpacity, Math.max(0.15, opacity));
     document.documentElement.style.setProperty('--scroll-opacity', opacity);
 });
 
